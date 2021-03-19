@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: a2f993c2b4ef5b1498e1df357a3eb645
+timeCreated: 1557491280
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Mistral
+  fontNames:
+  - Mistral
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
