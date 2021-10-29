@@ -17,7 +17,7 @@ public class PlayerInfo : MonoBehaviour
 	bool lvlChanged = true;
 
 	float FillSpeed = 1.5f;
-	float FillXpSpeed = 0.016f;
+	float FillXpSpeed = 2.016f;
 
 	public Image HpImage;
 	public Image ManaImage;

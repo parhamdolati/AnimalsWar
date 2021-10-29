@@ -12,17 +12,39 @@ public class screenClicker : MonoBehaviour
 	public PlayMusic playMusic;
 	public GameObject ClientProfile;
 
-	void Update ()
+	void Update()
 	{
-		if (Input.GetKeyDown (KeyCode.Mouse0)) {
-			var ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-			RaycastHit hit = new RaycastHit ();
-			if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Began) {
-				if (!EventSystem.current.IsPointerOverGameObject (Input.GetTouch (0).fingerId)) {
-					//if (!EventSystem.current.IsPointerOverGameObject ()) {
+		if (Application.platform == RuntimePlatform.Android)
+		{
+			if (Input.GetKeyDown(KeyCode.Mouse0))
+			{
+				var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+				RaycastHit hit = new RaycastHit();
+				if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+				{
+					if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+					{
+						//AGAR bar ruy UI click nakarde bud
+						if (Physics.Raycast(ray, out hit))
+						{
+							ClickToMove(hit);
+						}
+					}
+				}
+			}
+		}
+		else
+		{
+			if (Input.GetKeyDown(KeyCode.Mouse0))
+			{
+				var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+				RaycastHit hit = new RaycastHit();
+				if (!EventSystem.current.IsPointerOverGameObject())
+				{
 					//AGAR bar ruy UI click nakarde bud
-					if (Physics.Raycast (ray, out hit)) {
-						ClickToMove (hit);
+					if (Physics.Raycast(ray, out hit))
+					{
+						ClickToMove(hit);
 					}
 				}
 			}
